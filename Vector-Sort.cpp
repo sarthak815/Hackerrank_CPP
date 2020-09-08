@@ -8,20 +8,18 @@ using namespace std;
 
 int main() {
     /* Enter your code here. Read input from STDIN. Print output to STDOUT */
-    int i,n,k,s;
+    int i,n,k;
     vector<int>v;
     cin>>n;
     for(i=0;i<n;i++){
         cin>>k;
         v.push_back(k);
+        k=0;
     }
-    cin>>k;
-    v.erase(v.begin()+k-1);
-    cin>>i>>k;
-    v.erase(v.begin()+i-1,v.begin()+k-1);
-    s = v.size();
-    cout<<s<<"\n";
-    for(i=0;i<s;i++)
+    sort(v.begin(),v.end());
+    for(i=0;i<n;i++){
         cout<<v[i]<<" ";
+    }
+
     return 0;
 }
